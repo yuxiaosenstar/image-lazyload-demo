@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ScaleImage :src="imgSrc" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import ScaleImage from './components/scale-image.vue'
 export default {
+  components: { ScaleImage },
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  data() {
+    return {
+      imgSrc: 'http://101.43.51.163:3000/upload/94815ae581d1227f55e988a18ef2076636bf93.png',
+    }
+  },
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 200vh;
+  position: relative;
+}
+.box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 </style>
